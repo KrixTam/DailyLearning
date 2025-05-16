@@ -1,0 +1,27 @@
+import matplotlib.pyplot as plt
+
+
+def chart(results):
+    # 结果可视化
+    plt.figure(figsize=(12, 5))
+
+    # 损失曲线
+    plt.subplot(1, 2, 1)
+    for act_name in results:
+        plt.plot(results[act_name]['train_losses'], label=act_name)
+    plt.title('Training Loss Comparison')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.legend()
+
+    # 准确率曲线
+    plt.subplot(1, 2, 2)
+    for act_name in results:
+        plt.plot(results[act_name]['test_accuracies'], label=act_name)
+    plt.title('Test Accuracy Comparison')
+    plt.xlabel('Epoch')
+    plt.ylabel('Accuracy (%)')
+    plt.legend()
+
+    plt.tight_layout()
+    plt.show()
