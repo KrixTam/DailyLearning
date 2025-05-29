@@ -1,3 +1,6 @@
+# 根据如下链接中提供的代码进行调整
+# https://medium.com/@biplabpoudel25/radial-basis-function-rbf-for-mnist-dataset-classification-57e83cf0fc97
+
 # Step 1: Import required libraries
 
 # import required libraries

@@ -1,0 +1,29 @@
+The SSE for 2 clusters is 2960781.58
+The average silhouette score for 2 clusters is 0.09
+The SSE for 3 clusters is 2816457.80
+The average silhouette score for 3 clusters is 0.05
+The SSE for 4 clusters is 2710017.09
+The average silhouette score for 4 clusters is 0.06
+The SSE for 5 clusters is 2605961.02
+The average silhouette score for 5 clusters is 0.06
+The SSE for 6 clusters is 2533295.93
+The average silhouette score for 6 clusters is 0.06
+The SSE for 7 clusters is 2479891.43
+The average silhouette score for 7 clusters is 0.07
+The SSE for 8 clusters is 2435772.00
+The average silhouette score for 8 clusters is 0.07
+The SSE for 9 clusters is 2395585.41
+The average silhouette score for 9 clusters is 0.06
+The SSE for 10 clusters is 2353216.08
+The average silhouette score for 10 clusters is 0.06
+The SSE for 20 clusters is 2111386.73
+The average silhouette score for 20 clusters is 0.07
+The SSE for 30 clusters is 1982863.06
+The average silhouette score for 30 clusters is 0.06
+The SSE for 50 clusters is 1844650.43
+The average silhouette score for 50 clusters is 0.05
+The SSE for 100 clusters is 1679793.89
+The average silhouette score for 100 clusters is 0.05
+{'silhouette_k': 2, 'elbow_k': 2}
+
+Process finished with exit code 0

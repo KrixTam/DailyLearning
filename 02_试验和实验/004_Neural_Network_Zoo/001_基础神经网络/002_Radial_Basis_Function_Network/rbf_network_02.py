@@ -1,4 +1,5 @@
 # 比较不同的聚类中心数的效果
+# 结合auto_select_k.py，可以发现，自动选择聚类中心数，对RBFNetwork没有太大作用，我们并没有使用最优聚类中心数，反而是节点数越多，效果越好。
 # Step 1: Import required libraries
 
 # import required libraries
@@ -98,7 +99,6 @@ if __name__ == '__main__':
             train_losses.append(train_loss)
             test_accuracies.append(test_acc)
             print(f"Epoch {epoch + 1}/{num_epochs} | Train Loss: {train_loss:.4f} | Test Acc: {test_acc:.4f}")
-
 
         results[test_name] = {
             'train_losses': train_losses,
