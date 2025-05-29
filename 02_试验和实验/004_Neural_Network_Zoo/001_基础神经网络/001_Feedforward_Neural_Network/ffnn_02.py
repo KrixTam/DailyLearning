@@ -5,6 +5,7 @@ from ffnn_data import input_dim, hidden_dim, output_dim, num_epochs, learning_ra
 from ffnn_data import train_loader, test_loader
 from ffnn_show_chart import chart
 
+
 # 定义不同激活函数的模型
 class FFNNReLU(nn.Module):
     def __init__(self, input_dim, hidden_dim, output_dim):
