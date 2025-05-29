@@ -6,7 +6,8 @@ from utils import timer
 @timer
 def demo():
     res = ollama.chat(
-        model='deepseek-r1:7b',
+        # model='deepseek-r1:7b',
+        model='qwen3:4b',
         messages=[
             {
                 'role': 'system',
