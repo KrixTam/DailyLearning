@@ -1,0 +1,20 @@
+/Users/krix/miniconda3/bin/python /Users/krix/PycharmProjects/DailyLearning/02_试验和实验/002_QS/001_大V观点梳理/001_实验/svo_analyze_demo_sf.py
+S1:
+
+{
+  "data": [
+    {"action": "买入", "stock": ["若羽臣"]},
+    {"action": "卖出", "stock": ["中毅达", "尤夫股份"]}
+  ]
+}
+S2:
+
+{
+  "data": [
+    {"action": "买入", "stock": ["若羽臣"]},
+    {"action": "卖出", "stock": ["中毅达", "尤夫股份"]}
+  ]
+}
+{'data': [{'action': '买入', 'stock': ['若羽臣']}, {'action': '卖出', 'stock': ['中毅达', '尤夫股份']}]}
+
+Process finished with exit code 0

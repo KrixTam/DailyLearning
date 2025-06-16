@@ -1,0 +1,17 @@
+/Users/krix/miniconda3/bin/python /Users/krix/PycharmProjects/DailyLearning/02_试验和实验/002_QS/001_大V观点梳理/001_实验/svo_analyze_demo_sf.py
+S1:
+
+```json
+[
+  {"intent": "继续持有", "stock": ["顺钠科技", "中恒电气", "海得控制", "若羽臣"]},
+  {"intent": "卖出", "stock": ["中毅达", "尤夫股份"]}
+]
+```
+解析失败: list indices must be integers or slices, not str
+S2: {"data": [
+  {"intent": "继续持有", "stock": ["顺钠科技", "中恒电气", "海得控制", "若羽臣"]},
+  {"intent": "卖出", "stock": ["中毅达", "尤夫股份"]}
+]}
+{'data': [{'intent': '继续持有', 'stock': ['顺钠科技', '中恒电气', '海得控制', '若羽臣']}, {'intent': '卖出', 'stock': ['中毅达', '尤夫股份']}]}
+
+Process finished with exit code 0

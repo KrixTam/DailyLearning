@@ -1,0 +1,8 @@
+/Users/krix/miniconda3/bin/python /Users/krix/PycharmProjects/DailyLearning/02_试验和实验/002_QS/001_大V观点梳理/001_实验/svo_analyze_demo_jieba.py
+Building prefix dict from the default dictionary ...
+Loading model from cache /var/folders/ss/8vbm5j1s0y3gbch76zf2lc7c0000gn/T/jieba.cache
+Loading model cost 0.350 seconds.
+Prefix dict has been built successfully.
+{'data': [{'subject': '张三', 'predicate': '批评', 'object': '李四'}]}
+
+Process finished with exit code 0

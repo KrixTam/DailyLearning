@@ -1,0 +1,93 @@
+/Users/krix/miniconda3/bin/python /Users/krix/PycharmProjects/DailyLearning/02_试验和实验/002_QS/001_大V观点梳理/001_实验/svo_analyze_demo_sf.py
+请输入你的API Key：
+S1:
+```json
+{
+  "trading": [
+    {
+      "intent": "买入",
+      "stock": ["若yu臣"]
+    },
+    {
+      "intent": "卖出",
+      "stock": ["中yi达", "尤夫GF"]
+    },
+    {
+      "intent": "持有",
+      "stock": []
+    },
+    {
+      "intent": "观望",
+      "stock": []
+    }
+  ],
+  "intention": [
+    {
+      "condition": "价格低时",
+      "intent": "买入",
+      "stock": ["若yu臣"]
+    },
+    {
+      "condition": "",
+      "intent": "卖出",
+      "stock": ["中yi达", "尤夫GF"]
+    },
+    {
+      "condition": "",
+      "intent": "持有",
+      "stock": []
+    },
+    {
+      "condition": "",
+      "intent": "观望",
+      "stock": []
+    }
+  ]
+}
+```
+解析失败: 'data'
+S2: {"data": {
+  "trading": [
+    {
+      "intent": "买入",
+      "stock": ["若yu臣"]
+    },
+    {
+      "intent": "卖出",
+      "stock": ["中yi达", "尤夫GF"]
+    },
+    {
+      "intent": "持有",
+      "stock": []
+    },
+    {
+      "intent": "观望",
+      "stock": []
+    }
+  ],
+  "intention": [
+    {
+      "condition": "价格低时",
+      "intent": "买入",
+      "stock": ["若yu臣"]
+    },
+    {
+      "condition": "",
+      "intent": "卖出",
+      "stock": ["中yi达", "尤夫GF"]
+    },
+    {
+      "condition": "",
+      "intent": "持有",
+      "stock": []
+    },
+    {
+      "condition": "",
+      "intent": "观望",
+      "stock": []
+    }
+  ]
+}}
+{'data': {'trading': [{'intent': '买入', 'stock': ['若yu臣']}, {'intent': '卖出', 'stock': ['中yi达', '尤夫GF']}, {'intent': '持有', 'stock': []}, {'intent': '观望', 'stock': []}], 'intention': [{'condition': '价格低时', 'intent': '买入', 'stock': ['若yu臣']}, {'condition': '', 'intent': '卖出', 'stock': ['中yi达', '尤夫GF']}, {'condition': '', 'intent': '持有', 'stock': []}, {'condition': '', 'intent': '观望', 'stock': []}]}}
+
+Process finished with exit code 0

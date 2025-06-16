@@ -1,0 +1,88 @@
+/Users/krix/miniconda3/bin/python /Users/krix/PycharmProjects/DailyLearning/02_试验和实验/002_QS/001_大V观点梳理/001_实验/svo_analyze_demo_sf.py
+请输入你的API Key：
+S1:
+
+{
+  "trading": [
+    {
+      "intent": "继续持有",
+      "stock": ["顺钠科技", "中恒电气", "海得控制"]
+    },
+    {
+      "intent": "买入",
+      "stock": ["若羽臣"]
+    }
+  ],
+  "intention": [
+    {
+      "condition": "金融回调",
+      "intent": "买入",
+      "stock": ["若羽臣"]
+    },
+    {
+      "condition": "下周市场情绪突破",
+      "intent": "买入",
+      "stock": ["若羽臣"]
+    },
+    {
+      "condition": "大降息背景",
+      "intent": "买入",
+      "stock": ["若羽臣"]
+    },
+    {
+      "condition": "低位机会",
+      "intent": "买入",
+      "stock": ["若羽臣"]
+    },
+    {
+      "condition": "",
+      "intent": "继续持有",
+      "stock": ["顺钠科技", "中恒电气", "海得控制"]
+    }
+  ]
+}
+解析失败: 'data'
+S2: {"data":
+
+{
+  "trading": [
+    {
+      "intent": "继续持有",
+      "stock": ["顺钠科技", "中恒电气", "海得控制"]
+    },
+    {
+      "intent": "买入",
+      "stock": ["若羽臣"]
+    }
+  ],
+  "intention": [
+    {
+      "condition": "金融回调",
+      "intent": "买入",
+      "stock": ["若羽臣"]
+    },
+    {
+      "condition": "下周市场情绪突破",
+      "intent": "买入",
+      "stock": ["若羽臣"]
+    },
+    {
+      "condition": "大降息背景",
+      "intent": "买入",
+      "stock": ["若羽臣"]
+    },
+    {
+      "condition": "低位机会",
+      "intent": "买入",
+      "stock": ["若羽臣"]
+    },
+    {
+      "condition": "",
+      "intent": "继续持有",
+      "stock": ["顺钠科技", "中恒电气", "海得控制"]
+    }
+  ]
+}}
+{'data': {'trading': [{'intent': '继续持有', 'stock': ['顺钠科技', '中恒电气', '海得控制']}, {'intent': '买入', 'stock': ['若羽臣']}], 'intention': [{'condition': '金融回调', 'intent': '买入', 'stock': ['若羽臣']}, {'condition': '下周市场情绪突破', 'intent': '买入', 'stock': ['若羽臣']}, {'condition': '大降息背景', 'intent': '买入', 'stock': ['若羽臣']}, {'condition': '低位机会', 'intent': '买入', 'stock': ['若羽臣']}, {'condition': '', 'intent': '继续持有', 'stock': ['顺钠科技', '中恒电气', '海得控制']}]}}
+
+Process finished with exit code 0

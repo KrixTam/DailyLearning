@@ -1,0 +1,626 @@
+/Users/krix/miniconda3/bin/python /Users/krix/PycharmProjects/DailyLearning/02_试验和实验/002_QS/001_大V观点梳理/001_实验/svo_analyze_demo_sf.py
+
+
+```json
+{
+  "data": [
+    {
+      "subject": "各位老铁",
+      "predicate": "好",
+      "object": ""
+    },
+    {
+      "subject": "我是你们熟悉的醒哥",
+      "predicate": "是",
+      "object": "醒哥"
+    },
+    {
+      "subject": "今天",
+      "predicate": "震荡分化",
+      "object": ""
+    },
+    {
+      "subject": "市场情绪",
+      "predicate": "分歧",
+      "object": ""
+    },
+    {
+      "subject": "整体",
+      "predicate": "还好",
+      "object": ""
+    },
+    {
+      "subject": "大面",
+      "predicate": "不多",
+      "object": ""
+    },
+    {
+      "subject": "指数",
+      "predicate": "保持",
+      "object": "震荡攀升节奏"
+    },
+    {
+      "subject": "大金融",
+      "predicate": "强势",
+      "object": ""
+    },
+    {
+      "subject": "大金融",
+      "predicate": "助推",
+      "object": "指数"
+    },
+    {
+      "subject": "金融",
+      "predicate": "回调",
+      "object": ""
+    },
+    {
+      "subject": "预计",
+      "predicate": "有",
+      "object": "短线回调"
+    },
+    {
+      "subject": "回调",
+      "predicate": "当",
+      "object": "机会"
+    },
+    {
+      "subject": "大降息",
+      "predicate": "背景",
+      "object": ""
+    },
+    {
+      "subject": "宽松的资金面",
+      "predicate": "推动",
+      "object": "市场"
+    },
+    {
+      "subject": "持续",
+      "predicate": "维持",
+      "object": "万亿水平"
+    },
+    {
+      "subject": "活跃资金",
+      "predicate": "出击",
+      "object": "题材机会"
+    },
+    {
+      "subject": "李云龙",
+      "predicate": "用",
+      "object": "这里"
+    },
+    {
+      "subject": "行情",
+      "predicate": "好过",
+      "object": ""
+    },
+    {
+      "subject": "没有",
+      "predicate": "是",
+      "object": "稀烂的"
+    },
+    {
+      "subject": "市场情绪",
+      "predicate": "极差",
+      "object": ""
+    },
+    {
+      "subject": "今年",
+      "predicate": "超预期",
+      "object": ""
+    },
+    {
+      "subject": "机会",
+      "predicate": "有",
+      "object": "这么多"
+    },
+    {
+      "subject": "下半年",
+      "predicate": "进入",
+      "object": "抱团妖谷行情"
+    },
+    {
+      "subject": "机会",
+      "predicate": "只能",
+      "object": "更多"
+    },
+    {
+      "subject": "醒哥",
+      "predicate": "看好",
+      "object": "行情"
+    },
+    {
+      "subject": "全球性的大降息",
+      "predicate": "是",
+      "object": "支持市场震荡上行的主要推动力"
+    },
+    {
+      "subject": "银行320万亿存款",
+      "predicate": "是",
+      "object": "支持市场震荡上行的主要推动力"
+    },
+    {
+      "subject": "老抱团妖谷们",
+      "predicate": "走弱",
+      "object": ""
+    },
+    {
+      "subject": "中yi达、尤夫GF这类",
+      "predicate": "就是",
+      "object": "炒的太久了"
+    },
+    {
+      "subject": "英雄",
+      "predicate": "迟暮",
+      "object": ""
+    },
+    {
+      "subject": "低位机会",
+      "predicate": "此起彼伏",
+      "object": ""
+    },
+    {
+      "subject": "活跃资金",
+      "predicate": "尝试",
+      "object": "打造新一轮大行情"
+    },
+    {
+      "subject": "高低切换",
+      "predicate": "需要",
+      "object": "时间过程"
+    },
+    {
+      "subject": "市场情绪",
+      "predicate": "选择",
+      "object": "向上突破"
+    },
+    {
+      "subject": "市场情绪",
+      "predicate": "开启",
+      "object": "上升周期"
+    },
+    {
+      "subject": "机会",
+      "predicate": "是",
+      "object": "大肉机会"
+    },
+    {
+      "subject": "市场情绪",
+      "predicate": "分歧",
+      "object": ""
+    },
+    {
+      "subject": "短线情绪票",
+      "predicate": "确定性高",
+      "object": ""
+    },
+    {
+      "subject": "机会",
+      "predicate": "不多",
+      "object": ""
+    },
+    {
+      "subject": "醒哥",
+      "predicate": "聚焦",
+      "object": "短线情绪票运作"
+    },
+    {
+      "subject": "醒哥",
+      "predicate": "转战",
+      "object": "趋势谷"
+    },
+    {
+      "subject": "若yu臣",
+      "predicate": "收获",
+      "object": "涨婷"
+    },
+    {
+      "subject": "醒哥",
+      "predicate": "分享",
+      "object": "若yu臣"
+    },
+    {
+      "subject": "它",
+      "predicate": "给了",
+      "object": "绿盘低吸机会"
+    },
+    {
+      "subject": "老铁",
+      "predicate": "吃了",
+      "object": "涨婷大肉"
+    },
+    {
+      "subject": "这只票",
+      "predicate": "选出来",
+      "object": "趋势牛谷"
+    },
+    {
+      "subject": "这只票",
+      "predicate": "运用",
+      "object": "《趋势牛谷操盘战法》"
+    },
+    {
+      "subject": "这只票",
+      "predicate": "教",
+      "object": "大家"
+    },
+    {
+      "subject": "持续学习",
+      "predicate": "是",
+      "object": "必须的"
+    },
+    {
+      "subject": "市场",
+      "predicate": "进化",
+      "object": ""
+    },
+    {
+      "subject": "咱们",
+      "predicate": "跟上",
+      "object": "市场进化的节奏"
+    },
+    {
+      "subject": "路",
+      "predicate": "不能选择",
+      "object": "放弃的路"
+    },
+    {
+      "subject": "路",
+      "predicate": "不能放弃",
+      "object": "成长的路"
+    },
+    {
+      "subject": "大家",
+      "predicate": "共勉",
+      "object": "赠人玫瑰，手留余香"
+    },
+    {
+      "subject": "大家",
+      "predicate": "欢迎",
+      "object": "点赞、在看、留言三连"
+    },
+    {
+      "subject": "这样",
+      "predicate": "被认定",
+      "object": "天之骄子"
+    },
+    {
+      "subject": "声明",
+      "predicate": "代表",
+      "object": "作者个人对市场的观察与记录"
+    },
+    {
+      "subject": "本号所有文章内容",
+      "predicate": "代表",
+      "object": "作者个人对市场的观察与记录"
+    },
+    {
+      "subject": "本号所有文章内容",
+      "predicate": "包含",
+      "object": "主观判断与随机因素"
+    },
+    {
+      "subject": "本号所有文章内容",
+      "predicate": "不作为",
+      "object": "决策依据"
+    },
+    {
+      "subject": "本号所有文章内容",
+      "predicate": "作为",
+      "object": "参考"
+    }
+  ]
+}
+```
+{
+  "data": [
+    {
+      "subject": "各位老铁",
+      "predicate": "好",
+      "object": ""
+    },
+    {
+      "subject": "我是你们熟悉的醒哥",
+      "predicate": "是",
+      "object": "醒哥"
+    },
+    {
+      "subject": "今天",
+      "predicate": "震荡分化",
+      "object": ""
+    },
+    {
+      "subject": "市场情绪",
+      "predicate": "分歧",
+      "object": ""
+    },
+    {
+      "subject": "整体",
+      "predicate": "还好",
+      "object": ""
+    },
+    {
+      "subject": "大面",
+      "predicate": "不多",
+      "object": ""
+    },
+    {
+      "subject": "指数",
+      "predicate": "保持",
+      "object": "震荡攀升节奏"
+    },
+    {
+      "subject": "大金融",
+      "predicate": "强势",
+      "object": ""
+    },
+    {
+      "subject": "大金融",
+      "predicate": "助推",
+      "object": "指数"
+    },
+    {
+      "subject": "金融",
+      "predicate": "回调",
+      "object": ""
+    },
+    {
+      "subject": "预计",
+      "predicate": "有",
+      "object": "短线回调"
+    },
+    {
+      "subject": "回调",
+      "predicate": "当",
+      "object": "机会"
+    },
+    {
+      "subject": "大降息",
+      "predicate": "背景",
+      "object": ""
+    },
+    {
+      "subject": "宽松的资金面",
+      "predicate": "推动",
+      "object": "市场"
+    },
+    {
+      "subject": "持续",
+      "predicate": "维持",
+      "object": "万亿水平"
+    },
+    {
+      "subject": "活跃资金",
+      "predicate": "出击",
+      "object": "题材机会"
+    },
+    {
+      "subject": "李云龙",
+      "predicate": "用",
+      "object": "这里"
+    },
+    {
+      "subject": "行情",
+      "predicate": "好过",
+      "object": ""
+    },
+    {
+      "subject": "没有",
+      "predicate": "是",
+      "object": "稀烂的"
+    },
+    {
+      "subject": "市场情绪",
+      "predicate": "极差",
+      "object": ""
+    },
+    {
+      "subject": "今年",
+      "predicate": "超预期",
+      "object": ""
+    },
+    {
+      "subject": "机会",
+      "predicate": "有",
+      "object": "这么多"
+    },
+    {
+      "subject": "下半年",
+      "predicate": "进入",
+      "object": "抱团妖谷行情"
+    },
+    {
+      "subject": "机会",
+      "predicate": "只能",
+      "object": "更多"
+    },
+    {
+      "subject": "醒哥",
+      "predicate": "看好",
+      "object": "行情"
+    },
+    {
+      "subject": "全球性的大降息",
+      "predicate": "是",
+      "object": "支持市场震荡上行的主要推动力"
+    },
+    {
+      "subject": "银行320万亿存款",
+      "predicate": "是",
+      "object": "支持市场震荡上行的主要推动力"
+    },
+    {
+      "subject": "老抱团妖谷们",
+      "predicate": "走弱",
+      "object": ""
+    },
+    {
+      "subject": "中yi达、尤夫GF这类",
+      "predicate": "就是",
+      "object": "炒的太久了"
+    },
+    {
+      "subject": "英雄",
+      "predicate": "迟暮",
+      "object": ""
+    },
+    {
+      "subject": "低位机会",
+      "predicate": "此起彼伏",
+      "object": ""
+    },
+    {
+      "subject": "活跃资金",
+      "predicate": "尝试",
+      "object": "打造新一轮大行情"
+    },
+    {
+      "subject": "高低切换",
+      "predicate": "需要",
+      "object": "时间过程"
+    },
+    {
+      "subject": "市场情绪",
+      "predicate": "选择",
+      "object": "向上突破"
+    },
+    {
+      "subject": "市场情绪",
+      "predicate": "开启",
+      "object": "上升周期"
+    },
+    {
+      "subject": "机会",
+      "predicate": "是",
+      "object": "大肉机会"
+    },
+    {
+      "subject": "市场情绪",
+      "predicate": "分歧",
+      "object": ""
+    },
+    {
+      "subject": "短线情绪票",
+      "predicate": "确定性高",
+      "object": ""
+    },
+    {
+      "subject": "机会",
+      "predicate": "不多",
+      "object": ""
+    },
+    {
+      "subject": "醒哥",
+      "predicate": "聚焦",
+      "object": "短线情绪票运作"
+    },
+    {
+      "subject": "醒哥",
+      "predicate": "转战",
+      "object": "趋势谷"
+    },
+    {
+      "subject": "若yu臣",
+      "predicate": "收获",
+      "object": "涨婷"
+    },
+    {
+      "subject": "醒哥",
+      "predicate": "分享",
+      "object": "若yu臣"
+    },
+    {
+      "subject": "它",
+      "predicate": "给了",
+      "object": "绿盘低吸机会"
+    },
+    {
+      "subject": "老铁",
+      "predicate": "吃了",
+      "object": "涨婷大肉"
+    },
+    {
+      "subject": "这只票",
+      "predicate": "选出来",
+      "object": "趋势牛谷"
+    },
+    {
+      "subject": "这只票",
+      "predicate": "运用",
+      "object": "《趋势牛谷操盘战法》"
+    },
+    {
+      "subject": "这只票",
+      "predicate": "教",
+      "object": "大家"
+    },
+    {
+      "subject": "持续学习",
+      "predicate": "是",
+      "object": "必须的"
+    },
+    {
+      "subject": "市场",
+      "predicate": "进化",
+      "object": ""
+    },
+    {
+      "subject": "咱们",
+      "predicate": "跟上",
+      "object": "市场进化的节奏"
+    },
+    {
+      "subject": "路",
+      "predicate": "不能选择",
+      "object": "放弃的路"
+    },
+    {
+      "subject": "路",
+      "predicate": "不能放弃",
+      "object": "成长的路"
+    },
+    {
+      "subject": "大家",
+      "predicate": "共勉",
+      "object": "赠人玫瑰，手留余香"
+    },
+    {
+      "subject": "大家",
+      "predicate": "欢迎",
+      "object": "点赞、在看、留言三连"
+    },
+    {
+      "subject": "这样",
+      "predicate": "被认定",
+      "object": "天之骄子"
+    },
+    {
+      "subject": "声明",
+      "predicate": "代表",
+      "object": "作者个人对市场的观察与记录"
+    },
+    {
+      "subject": "本号所有文章内容",
+      "predicate": "代表",
+      "object": "作者个人对市场的观察与记录"
+    },
+    {
+      "subject": "本号所有文章内容",
+      "predicate": "包含",
+      "object": "主观判断与随机因素"
+    },
+    {
+      "subject": "本号所有文章内容",
+      "predicate": "不作为",
+      "object": "决策依据"
+    },
+    {
+      "subject": "本号所有文章内容",
+      "predicate": "作为",
+      "object": "参考"
+    }
+  ]
+}
+{'data': [{'subject': '各位老铁', 'predicate': '好', 'object': ''}, {'subject': '我是你们熟悉的醒哥', 'predicate': '是', 'object': '醒哥'}, {'subject': '今天', 'predicate': '震荡分化', 'object': ''}, {'subject': '市场情绪', 'predicate': '分歧', 'object': ''}, {'subject': '整体', 'predicate': '还好', 'object': ''}, {'subject': '大面', 'predicate': '不多', 'object': ''}, {'subject': '指数', 'predicate': '保持', 'object': '震荡攀升节奏'}, {'subject': '大金融', 'predicate': '强势', 'object': ''}, {'subject': '大金融', 'predicate': '助推', 'object': '指数'}, {'subject': '金融', 'predicate': '回调', 'object': ''}, {'subject': '预计', 'predicate': '有', 'object': '短线回调'}, {'subject': '回调', 'predicate': '当', 'object': '机会'}, {'subject': '大降息', 'predicate': '背景', 'object': ''}, {'subject': '宽松的资金面', 'predicate': '推动', 'object': '市场'}, {'subject': '持续', 'predicate': '维持', 'object': '万亿水平'}, {'subject': '活跃资金', 'predicate': '出击', 'object': '题材机会'}, {'subject': '李云龙', 'predicate': '用', 'object': '这里'}, {'subject': '行情', 'predicate': '好过', 'object': ''}, {'subject': '没有', 'predicate': '是', 'object': '稀烂的'}, {'subject': '市场情绪', 'predicate': '极差', 'object': ''}, {'subject': '今年', 'predicate': '超预期', 'object': ''}, {'subject': '机会', 'predicate': '有', 'object': '这么多'}, {'subject': '下半年', 'predicate': '进入', 'object': '抱团妖谷行情'}, {'subject': '机会', 'predicate': '只能', 'object': '更多'}, {'subject': '醒哥', 'predicate': '看好', 'object': '行情'}, {'subject': '全球性的大降息', 'predicate': '是', 'object': '支持市场震荡上行的主要推动力'}, {'subject': '银行320万亿存款', 'predicate': '是', 'object': '支持市场震荡上行的主要推动力'}, {'subject': '老抱团妖谷们', 'predicate': '走弱', 'object': ''}, {'subject': '中yi达、尤夫GF这类', 'predicate': '就是', 'object': '炒的太久了'}, {'subject': '英雄', 'predicate': '迟暮', 'object': ''}, {'subject': '低位机会', 'predicate': '此起彼伏', 'object': ''}, {'subject': '活跃资金', 'predicate': '尝试', 'object': '打造新一轮大行情'}, {'subject': '高低切换', 'predicate': '需要', 'object': '时间过程'}, {'subject': '市场情绪', 'predicate': '选择', 'object': '向上突破'}, {'subject': '市场情绪', 'predicate': '开启', 'object': '上升周期'}, {'subject': '机会', 'predicate': '是', 'object': '大肉机会'}, {'subject': '市场情绪', 'predicate': '分歧', 'object': ''}, {'subject': '短线情绪票', 'predicate': '确定性高', 'object': ''}, {'subject': '机会', 'predicate': '不多', 'object': ''}, {'subject': '醒哥', 'predicate': '聚焦', 'object': '短线情绪票运作'}, {'subject': '醒哥', 'predicate': '转战', 'object': '趋势谷'}, {'subject': '若yu臣', 'predicate': '收获', 'object': '涨婷'}, {'subject': '醒哥', 'predicate': '分享', 'object': '若yu臣'}, {'subject': '它', 'predicate': '给了', 'object': '绿盘低吸机会'}, {'subject': '老铁', 'predicate': '吃了', 'object': '涨婷大肉'}, {'subject': '这只票', 'predicate': '选出来', 'object': '趋势牛谷'}, {'subject': '这只票', 'predicate': '运用', 'object': '《趋势牛谷操盘战法》'}, {'subject': '这只票', 'predicate': '教', 'object': '大家'}, {'subject': '持续学习', 'predicate': '是', 'object': '必须的'}, {'subject': '市场', 'predicate': '进化', 'object': ''}, {'subject': '咱们', 'predicate': '跟上', 'object': '市场进化的节奏'}, {'subject': '路', 'predicate': '不能选择', 'object': '放弃的路'}, {'subject': '路', 'predicate': '不能放弃', 'object': '成长的路'}, {'subject': '大家', 'predicate': '共勉', 'object': '赠人玫瑰，手留余香'}, {'subject': '大家', 'predicate': '欢迎', 'object': '点赞、在看、留言三连'}, {'subject': '这样', 'predicate': '被认定', 'object': '天之骄子'}, {'subject': '声明', 'predicate': '代表', 'object': '作者个人对市场的观察与记录'}, {'subject': '本号所有文章内容', 'predicate': '代表', 'object': '作者个人对市场的观察与记录'}, {'subject': '本号所有文章内容', 'predicate': '包含', 'object': '主观判断与随机因素'}, {'subject': '本号所有文章内容', 'predicate': '不作为', 'object': '决策依据'}, {'subject': '本号所有文章内容', 'predicate': '作为', 'object': '参考'}]}
+
+Process finished with exit code 0
