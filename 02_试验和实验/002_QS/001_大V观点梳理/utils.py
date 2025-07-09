@@ -32,15 +32,23 @@ def extract_json_from_markdown(text):
         return json_str
 
 
-def html_to_text(html_path, encoding='utf-8'):
+def extract_html_info(html_path, encoding='utf-8'):
     """
-    从HTML文件中提取纯文本
+    从公众号文章的HTML文件中提取信息
 
     参数:
         html_path (str): 输入HTML文件路径
-        cleaned_text (str): 输出文本
+        info (dict): 输出经整理后的信息
+            {
+                "title": title,
+                "author": author,
+                "date": date,
+                "content": cleaned_text
+            }
         encoding (str): 文件编码（默认utf-8）
     """
+    # 提取字符串中 [] 之间的所有内容（中括号）
+    date = extract_bracket_content(html_path)[0]
     # 读取HTML文件内容
     with open(html_path, 'r', encoding=encoding) as f:
         html_content = f.read()
@@ -52,13 +60,19 @@ def html_to_text(html_path, encoding='utf-8'):
         tag.decompose()  # 彻底删除标签及其内容
 
     element = soup.find(id='js_content')
-
     text = element.get_text(separator='\n', strip=True)
     # 进一步清理多余空白（如连续换行）
     cleaned_text = '\n'.join([line.strip() for line in text.split('\n') if line.strip()])
     # 进一步清理多余换行
     cleaned_text = ''.join(cleaned_text.split('\n'))
-    return cleaned_text
+    title = soup.find(id='activity-name').get_text(separator='\n', strip=True)
+    author = soup.find(id='profileBt').get_text(separator='\n', strip=True)
+    return {
+        "title": title,
+        "author": author,
+        "date": date,
+        "content": cleaned_text
+    }
 
 
 def to_md(input_filename, artifacts_path: str = None):

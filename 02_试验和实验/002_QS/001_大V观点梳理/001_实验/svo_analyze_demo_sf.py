@@ -1,8 +1,6 @@
-import spacy
 import json
 from openai import OpenAI
-from utils import extract_json_from_markdown, html_to_text
-from functools import lru_cache
+from utils import extract_json_from_markdown, html_to_text, to_md
 
 
 your_api_key = input("请输入你的API Key：")
@@ -20,35 +18,36 @@ class HybridSVOAnalyzer:
         # self._cache_spacy_parse = lru_cache(maxsize=1000)(self._spacy_parse)
 
     def llm_parse(self, text):
-            """Qwen增强解析"""
-            try:
-                response = client.chat.completions.create(
-                    model=self.llm_model,
-                    messages=[
-                        {
-                            'role': 'user',
-                            'content': self._build_prompt(text)
-                        }
-                    ],
-                    temperature=0.2,
-                    stream=False
-                )
-                response_text = response.choices[0].message.content
-                print("S1: " + response_text)
-                # 提取有效JSON部分
-                json_str = extract_json_from_markdown(response_text)
-                print("S2: " + json_str)
-                return json.loads(json_str)
-            except Exception as e:
-                print(f"Qwen解析失败: {str(e)}")
-                return []
+        """Qwen增强解析"""
+        try:
+            response = client.chat.completions.create(
+                model=self.llm_model,
+                messages=[
+                    {
+                        'role': 'user',
+                        'content': self._build_prompt(text)
+                    }
+                ],
+                temperature=0.2,
+                stream=False
+            )
+            response_text = response.choices[0].message.content
+            print("S1: " + response_text)
+            # 提取有效JSON部分
+            json_str = extract_json_from_markdown(response_text)
+            print("S2: " + json_str)
+            return json.loads(json_str)
+        except Exception as e:
+            print(f"Qwen解析失败: {str(e)}")
+            return []
 
     def _build_prompt(self, text):
         # return self._build_prompt_01(text)
         # return self._build_prompt_02(text)
         # return self._build_prompt_03(text)
         # return self._build_prompt_04(text)
-        return self._build_prompt_05(text)
+        # return self._build_prompt_05(text)
+        return self._build_prompt_05_01(text)
         # return self._build_prompt_06(text)
 
     def _build_prompt_01(self, text):
@@ -66,6 +65,7 @@ class HybridSVOAnalyzer:
 
         当前文本：{text}
         """
+
     def _build_prompt_02(self, text):
         """动态prompt构建"""
         json_str = '{"data": [{"noun": ["张三", "报告"], "verb": "批评"},{"noun": ["领导", "李四"], "verb": "表扬"}]}'
@@ -155,14 +155,40 @@ class HybridSVOAnalyzer:
         待分析处理的内容如下，请读取后并按照以上要求输出处理结果（注意，禁止将示例的输出内容作为最后处理结果的一部分内容进行输出）：
         {text}
         """
+    def _build_prompt_05_01(self, text):
+        """动态prompt构建"""
+        json_str = '{"data": [{"condition": "", "intent": "继续持有", "stock": ["顺钠科技", "中恒电气", "海得控制"], "content": "昨天的三个票今天板了一个顺钠科技，中恒电气还行，海得控制也还行，至少目前都还行"}]}'
+        return f"""
+        任务：从给定文本中提取出疑似股票交易意图信息，要求：
+        1. 识别所有交易意图（类似买入、卖出、持有、观望，根据内容进行归纳总结描述意图）以及对应的股票名称；
+        2. 输出JSON数组，每个元素包含condition、intent、stock、content四个字段，其中：content为原文的引用内容；stock字段是一个列表；condition字段需要从交易意图中识别潜在的限制条件，比如未来的走势变化、指标值达到某一限定值等等，如果没有明确条件，就把condition设置为""就好了；intent为总结归纳的交易意图；
+        3. 不能把示例的输出作为输出内容整合到最后的结果中。
 
+        示例：
+        输入："昨天的三个票今天板了一个顺钠科技，中恒电气还行，海得控制也还行，至少目前都还行，别太离谱明天还可能会有人救。"
+        输出：{json_str}
 
-analyzer = HybridSVOAnalyzer("deepseek-ai/DeepSeek-R1-0528-Qwen3-8B")
-# analyzer = HybridSVOAnalyzer()
-# html_file = "/Users/krix/PycharmProjects/DailyLearning/02_试验和实验/002_QS/001_大V观点梳理/001_实验/[2025-06-12]又吃大肉明天这样做.html"
-html_file = "/Users/krix/PycharmProjects/DailyLearning/02_试验和实验/002_QS/001_大V观点梳理/001_实验/往伤口里倒白酒.html"
-# html_file = "/Users/krix/PycharmProjects/DailyLearning/02_试验和实验/002_QS/001_大V观点梳理/001_实验/[2025-03-16]注意年报雷.html"
-content = html_to_text(html_file)
-# content = '虽然天气恶劣，但工程队仍然按时完成了桥梁建设。张老师等三位老师今天来上课。'
-result = analyzer.llm_parse(content)
-print(result)
+        当前文本：{text}
+        """
+
+if __name__ == '__main__':
+    analyzer = HybridSVOAnalyzer("deepseek-ai/DeepSeek-R1-0528-Qwen3-8B")
+    # analyzer = HybridSVOAnalyzer()
+    html_file = "/Users/krix/PycharmProjects/DailyLearning/02_试验和实验/002_QS/001_大V观点梳理/001_实验/[2025-06-12]又吃大肉明天这样做.html"
+    # html_file = "/Users/krix/PycharmProjects/DailyLearning/02_试验和实验/002_QS/001_大V观点梳理/001_实验/往伤口里倒白酒.html"
+    # html_file = "/Users/krix/PycharmProjects/DailyLearning/02_试验和实验/002_QS/001_大V观点梳理/001_实验/[2025-03-16]注意年报雷.html"
+    # 模式1：使用html中的text进行分析
+    # 模式2：把html转为md进行分析
+    mode = 2
+    if 1 == mode:
+        content = html_to_text(html_file)
+        # content = '虽然天气恶劣，但工程队仍然按时完成了桥梁建设。张老师等三位老师今天来上课。'
+        result = analyzer.llm_parse(content)
+        print(result)
+    else:
+        artifacts_path_local = "/Users/krix/.cache/docling/models"
+        md_file = to_md(html_file, artifacts_path_local)
+        with open(md_file, 'r') as f:
+            content = f.read()
+            result = analyzer.llm_parse(content)
+            print(result)
