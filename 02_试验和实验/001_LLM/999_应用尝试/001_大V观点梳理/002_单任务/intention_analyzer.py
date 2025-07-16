@@ -13,7 +13,7 @@ class IntentionAnalyzer:
         else:
             self.client = client
 
-    def analyze(self, html_filename, encoding='utf-8', artifacts_path_local:str = None):
+    def analyze(self, html_filename, encoding='utf-8', artifacts_path_local: str = None):
         result = extract_html_info(html_filename, encoding)
         md_file = to_md(html_filename, artifacts_path_local)
         with open(md_file, 'r') as f:
@@ -25,7 +25,7 @@ class IntentionAnalyzer:
         """LLM增强解析"""
         def build_prompt(content: str):
             """动态prompt构建"""
-            json_str = '{"data": [{"condition": "", "intent": "继续持有", "stock": ["顺钠科技", "中恒电气", "海得控制"], "content": "昨天的三个票今天板了一个顺钠科技，中恒电气还行，海得控制也还行，至少目前都还行"}]}'
+            json_str = '[{"condition": "", "intent": "继续持有", "stock": ["顺钠科技", "中恒电气", "海得控制"], "content": "昨天的三个票今天板了一个顺钠科技，中恒电气还行，海得控制也还行，至少目前都还行"}]'
             return f"""
             任务：从给定文本中提取出疑似股票交易意图信息，要求：
             1. 识别所有交易意图（类似买入、卖出、持有、观望，根据内容进行归纳总结描述意图）以及对应的股票名称；
@@ -50,7 +50,7 @@ class IntentionAnalyzer:
                 temperature=0.2,
                 stream=False
             )
-            response_text = response.choices[0].message.content
+            response_text = '{"data": ' + response.choices[0].message.content + '}'
             # print("S1: " + response_text)
             # 提取有效JSON部分
             json_response = extract_json_from_markdown(response_text)
@@ -63,7 +63,7 @@ class IntentionAnalyzer:
 
 if __name__ == '__main__':
     intention_analyzer = IntentionAnalyzer()
-    html_file = "/Users/krix/PycharmProjects/DailyLearning/02_试验和实验/002_QS/001_大V观点梳理/001_实验/[2025-06-12]又吃大肉明天这样做.html"
+    html_file = "/Users/krix/PycharmProjects/DailyLearning/02_试验和实验/001_LLM/999_应用尝试/001_大V观点梳理/001_实验/[2025-06-12]又吃大肉明天这样做.html"
     artifacts_path_local = "/Users/krix/.cache/docling/models"
     response = intention_analyzer.analyze(html_file, artifacts_path_local=artifacts_path_local)
     print(response)

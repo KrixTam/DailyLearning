@@ -174,7 +174,7 @@ class HybridSVOAnalyzer:
 if __name__ == '__main__':
     analyzer = HybridSVOAnalyzer("deepseek-ai/DeepSeek-R1-0528-Qwen3-8B")
     # analyzer = HybridSVOAnalyzer()
-    html_file = "/Users/krix/PycharmProjects/DailyLearning/02_试验和实验/002_QS/001_大V观点梳理/001_实验/[2025-06-12]又吃大肉明天这样做.html"
+    html_file = "/02_试验和实验/001_LLM/999_应用尝试/001_大V观点梳理/001_实验/[2025-06-12]又吃大肉明天这样做.html"
     # html_file = "/Users/krix/PycharmProjects/DailyLearning/02_试验和实验/002_QS/001_大V观点梳理/001_实验/往伤口里倒白酒.html"
     # html_file = "/Users/krix/PycharmProjects/DailyLearning/02_试验和实验/002_QS/001_大V观点梳理/001_实验/[2025-03-16]注意年报雷.html"
     # 模式1：使用html中的text进行分析

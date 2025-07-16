@@ -68,7 +68,7 @@ class HybridSVOAnalyzer:
 analyzer = HybridSVOAnalyzer()
 # analyzer = HybridSVOAnalyzer("qwen3:14b")
 # html_file = "[2025-06-12]又吃大肉明天这样做.html"
-html_file = "/Users/krix/PycharmProjects/DailyLearning/02_试验和实验/002_QS/001_大V观点梳理/001_实验/[2025-06-12]又吃大肉明天这样做.html"
+html_file = "/02_试验和实验/001_LLM/999_应用尝试/001_大V观点梳理/001_实验/[2025-06-12]又吃大肉明天这样做.html"
 # content = html_to_text(html_file).split('精选留言')[0]
 content = html_to_text(html_file)
 # content = '虽然天气恶劣，但工程队仍然按时完成了桥梁建设。张老师等三位老师今天来上课。'
