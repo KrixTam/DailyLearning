@@ -1,5 +1,6 @@
 from openai import OpenAI
 import requests
+from litellm import completion
 
 
 def hello_world_01():
@@ -77,7 +78,33 @@ def hello_world_03():
     print(response.text)
 
 
+def hello_world_04():
+    your_api_key = input("请输入你的API Key：")
+    response = completion(
+        model="openai/deepseek-ai/DeepSeek-R1-0528-Qwen3-8B",
+        custom_llm_provider="",
+        messages=[
+            {
+                "role": "user",
+                "content": "推理模型会给市场带来哪些新的机会"
+            }
+        ],
+        stream=False,
+        api_base="https://api.siliconflow.cn",
+        api_key=your_api_key,
+        max_tokens=4096,
+        temperature=0.8,
+        stop=None,
+        frequency_penalty=0.5,
+        top_p=0.7,
+        min_p=0.05,
+        top_k=50,
+    )
+    print(response.choices[0].message.content)
+
+
 if __name__ == '__main__':
     # hello_world_01()
     # hello_world_02()
-    hello_world_03()
+    # hello_world_03()
+    hello_world_04()
