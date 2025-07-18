@@ -1,4 +1,3 @@
-import os
 import asyncio
 import math
 from dataclasses import dataclass, field
@@ -13,10 +12,12 @@ from tenacity import (
 )
 from tokenizer import Tokenizer, Token
 from limitter import RPM, TPM
-from litellm import completion
+from google import genai
+from google.genai import types
 
 
 def get_top_response_tokens(response: openai.ChatCompletion) -> List[Token]:
+# def get_top_response_tokens(response: types.GenerateContentResponse) -> List[Token]:
     token_logprobs = response.choices[0].logprobs.content
     tokens = []
     for token_prob in token_logprobs:
@@ -32,12 +33,13 @@ def get_top_response_tokens(response: openai.ChatCompletion) -> List[Token]:
 
 @dataclass
 class OpenAIModel:
-    model_name: str = "Qwen/Qwen3-8B"
-    api_key: str = None
-    base_url: str = "https://api.siliconflow.cn/v1"
+    # model_name: str = "Qwen/Qwen3-8B"
+    # api_key: str = None
+    # base_url: str = "https://api.siliconflow.cn/v1"
     # model_name: str = "qwen3:8b"
-    # api_key: str = "ollama"
-    # base_url: str = "http://localhost:11434/v1"
+    model_name: str = "deepseek-llm:7b"
+    api_key: str = "ollama"
+    base_url: str = "http://localhost:11434/v1"
 
     system_prompt: str = ""
     json_mode: bool = False
@@ -62,7 +64,6 @@ class OpenAIModel:
         if your_api_key is None:
             your_api_key = input("请输入你的API Key：")
         self.client = AsyncOpenAI(api_key=your_api_key, base_url=self.base_url, timeout=180)
-        # os.environ["OPENAI_API_KEY"] = your_api_key
         self.api_key = "API Key"
 
     def _pre_generate(self, text: str, history: List[str]) -> Dict:
@@ -88,6 +89,7 @@ class OpenAIModel:
         kwargs['messages'] = messages
         return kwargs
 
+    '''
     @retry(
         stop=stop_after_attempt(5),
         wait=wait_exponential(multiplier=1, min=4, max=10),
@@ -105,6 +107,34 @@ class OpenAIModel:
         completion = await self.client.chat.completions.create(
             model=self.model_name,
             **kwargs
+        )
+        
+        tokens = get_top_response_tokens(completion)
+
+        return tokens
+    '''
+
+    @retry(
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=1, min=4, max=10),
+        retry=retry_if_exception_type((RateLimitError, APIConnectionError, APITimeoutError)),
+    )
+    async def generate_topk_per_token(self, text: str, temperature: int = 0) -> List[Token]:
+        your_api_key = input("请输入你的API Key：")
+        client = genai.Client(api_key=your_api_key)
+        completion = client.models.generate_content(
+            model="gemini-2.0-flash-001",
+            contents=text,
+            config=types.GenerateContentConfig(
+                thinking_config=types.ThinkingConfig(thinking_budget=0), # Disables thinking
+                maxOutputTokens=1,
+                temperature=temperature,
+                topP=self.topp,
+                topK=self.topk,
+                seed=self.seed,
+                responseLogprobs=True,
+                logprobs=5
+            ),
         )
 
         tokens = get_top_response_tokens(completion)
@@ -155,5 +185,13 @@ async def main():
         print(r)
 
 
+async def topk_response():
+    # not working
+    client = OpenAIModel()
+    responses = await client.generate_topk_per_token("小红留着长头发，今天扎了马尾辫，穿着长裙。请问小红是男生还是女生？")
+    print(responses)
+
+
 if __name__ == '__main__':
-    asyncio.run(main())
+    # asyncio.run(main())
+    asyncio.run(topk_response())
