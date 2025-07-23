@@ -17,8 +17,6 @@ def hello_world_01():
         stream=True
     )
 
-
-
     for chunk in response:
         if not chunk.choices:
             continue

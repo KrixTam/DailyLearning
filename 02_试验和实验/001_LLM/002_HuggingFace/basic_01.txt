@@ -1,0 +1,7 @@
+/Users/krix/miniconda3/bin/python /Users/krix/PycharmProjects/DailyLearning/02_试验和实验/001_LLM/002_HuggingFace/basic_01.py
+No model was supplied, defaulted to distilbert/distilbert-base-uncased-finetuned-sst-2-english and revision 714eb0f (https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english).
+Using a pipeline without specifying a model name and revision in production is not recommended.
+Device set to use mps:0
+[{'label': 'POSITIVE', 'score': 0.9598050713539124}]
+
+Process finished with exit code 0
