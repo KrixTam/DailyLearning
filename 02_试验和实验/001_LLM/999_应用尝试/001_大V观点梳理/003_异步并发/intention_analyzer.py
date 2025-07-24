@@ -26,15 +26,28 @@ class IntentionAnalyzer:
         else:
             self.llm = client
         self.llm.model_name = model
+        self.set_temperature(0.2)
 
-    def analyze(self, html_files: list, max_concurrent: int, artifacts_path_local: str):
+    def get_temperature(self):
+        return self.llm.temperature
+
+    def set_temperature(self, temperature: float):
+        if temperature >= 0:
+            self.llm.temperature = temperature
+
+    def analyze(self, html_files: list, max_concurrent: int, encoding: str = 'utf-8', artifacts_path_local: str = None, as_completed: bool = True):
         loop = create_event_loop()
-        loop.run_until_complete(async_analyze(self, html_files, max_concurrent, artifacts_path_local))
+        loop.run_until_complete(async_analyze(
+            self, html_files, max_concurrent, encoding, artifacts_path_local, as_completed
+        ))
 
     async def async_get_intention(self, html_filename: str, encoding: str = 'utf-8', artifacts_path_local: str = None):
         result = extract_html_info(html_filename, encoding)
-        md_file_content = to_md(html_filename, artifacts_path_local)
-        result['intention'] = await self.parse(md_file_content)
+        # 使用Markdown内容进行分析
+        # md_file_content = to_md(html_filename, artifacts_path_local)
+        # result['intention'] = await self.parse(md_file_content)
+        # 使用纯文本内容进行分析
+        result["intention"] = await self.parse(result["content"])
         return result
 
     async def parse(self, text):
@@ -44,7 +57,7 @@ class IntentionAnalyzer:
             json_str = '[{"condition": "", "intent": "继续持有", "stock": ["顺钠科技", "中恒电气", "海得控制"], "content": "昨天的三个票今天板了一个顺钠科技，中恒电气还行，海得控制也还行，至少目前都还行"}]'
             return TEMPLATE.substitute(json_str=json_str, content=content)
         try:
-            response_text = await self.llm.generate(build_prompt(text), temperature=0.2)
+            response_text = await self.llm.generate(build_prompt(text), temperature=self.get_temperature())
             response_text = '{"data": ' + response_text + '}'
             # print("S1: " + response_text)
             # 提取有效JSON部分
@@ -56,7 +69,7 @@ class IntentionAnalyzer:
             return DEFAULT_ANALYSIS_RESULT
 
 
-async def async_analyze(llm: IntentionAnalyzer, html_files: list, max_concurrent: int, encoding: str = 'utf-8',artifacts_path_local: str = None):
+async def async_analyze(llm: IntentionAnalyzer, html_files: list, max_concurrent: int, encoding: str = 'utf-8', artifacts_path_local: str = None, as_completed: bool = True):
     async def get_intention(sem, llm, html_file: str, encoding: str = 'utf-8', artifacts_path_local: str = None):
         async with sem:
             try:
@@ -67,22 +80,26 @@ async def async_analyze(llm: IntentionAnalyzer, html_files: list, max_concurrent
             return result
 
     semaphore = asyncio.Semaphore(max_concurrent)
-    tasks = [get_intention(semaphore, llm, html_file, artifacts_path_local) for html_file in html_files]
+    tasks = [get_intention(semaphore, llm, html_file, encoding, artifacts_path_local) for html_file in html_files]
     print(moment().format())
-    # case 02_01
-    # responses = await asyncio.gather(*tasks, return_exceptions=True)
-    # for r in responses:
-    #     print(r)
-    # case 02_02
-    for completed_task in asyncio.as_completed(tasks):
-        response = await completed_task
-        print(response)
+    if as_completed:
+        # case 02_02
+        for completed_task in asyncio.as_completed(tasks):
+            response = await completed_task
+            print(response)
+    else:
+        # case 02_01
+        responses = await asyncio.gather(*tasks, return_exceptions=True)
+        for r in responses:
+            print(r)
     print(moment().format())
 
 
 async def main(llm: IntentionAnalyzer, html_file: str, artifacts_path_local: str):
+    print(moment().format())
     response = await llm.async_get_intention(html_file, artifacts_path_local=artifacts_path_local)
     print(response)
+    print(moment().format())
 
 
 if __name__ == '__main__':
@@ -90,7 +107,13 @@ if __name__ == '__main__':
     html_files = [base_dir + '[2025-03-16]注意年报雷.html', base_dir + '[2025-06-12]又吃大肉明天这样做.html']
     artifacts_path_local = "/Users/krix/.cache/docling/models"
     intention_analyzer = IntentionAnalyzer()
-    # case 01
-    # asyncio.run(main(intention_analyzer, html_files[1], artifacts_path_local))
-    # case 02
-    intention_analyzer.analyze(html_files, 10, artifacts_path_local)
+    intention_analyzer.set_temperature(0.525)
+    test_case = 2
+    if test_case == 1:
+        # case 01
+        asyncio.run(main(intention_analyzer, html_files[1], artifacts_path_local))
+    else:
+        # case 02
+        intention_analyzer.analyze(
+            html_files, 10, artifacts_path_local=artifacts_path_local, as_completed=True
+        )

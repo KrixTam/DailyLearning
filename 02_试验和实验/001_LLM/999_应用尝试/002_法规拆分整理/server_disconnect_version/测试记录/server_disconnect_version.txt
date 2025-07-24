@@ -1,5 +1,5 @@
 /Users/krix/miniconda3/bin/python /Users/krix/PycharmProjects/DailyLearning/02_试验和实验/001_LLM/999_应用尝试/002_法规拆分整理/structure_policy.py
-请输入你的API Key：sk-ljkgrffahzjzztvzcnqhpqwwyostzvgwilpijdznuzshtmnt
+请输入你的API Key：
 文件「output/中华人民共和国民法典_test_1_1.pdf」已转换为Markdown格式，并保存到：output/中华人民共和国民法典_test_1_1.md
 文件「output/中华人民共和国民法典_test_1_2.pdf」已转换为Markdown格式，并保存到：output/中华人民共和国民法典_test_1_2.md
 文件「output/中华人民共和国民法典_test_1_3.pdf」已转换为Markdown格式，并保存到：output/中华人民共和国民法典_test_1_3.md
